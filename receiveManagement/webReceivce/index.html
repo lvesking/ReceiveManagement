@@ -1,0 +1,1478 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>收货管理看板</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="js/css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<style>
+			.nav-bg {
+				width: 100%;
+				margin: 0 auto;
+				height: 3rem;
+				background: url(img/back.png);
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="nav-bg">
+			<div>
+				<img src="img/logo.png" height="48px" id="logo" />
+			</div>
+			<div class="f_system">
+				<p>收货管理看板 ( Materials Receiveing Schedule Kanban ) </p>
+			</div>
+			<div class="time">
+				<p id="dataTime"></p>
+			</div>
+		</nav>
+
+		<div class="content">
+			<div class="row content_header">
+				<div class="col-1 date borders" style="border-left: 1px solid #000000;">
+					<p class="float-lg-right" style=" width: 40px; font-size: 13px;">星期week</p>
+					<p class="p_date" style="width: 40px; font-size: 13px;">时间time</p>
+				</div>
+				<div class="col-md-auto borders berth center_berth">
+					<p class="text-center">泊位</p>
+					<p class="text-center">Berth</p>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期天/Sunday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期一/Monday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期二/Tuesday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期三/Wednesday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期四/Thursday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期五/Friday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders">
+					<div class="row">
+						<div class="col-12 inside_borders week">
+							<p>星期六/Saturday</p>
+						</div>
+						<div class="col-12 title_height">
+							<div class="row">
+								<div class="col-5 in_inside_borders">
+									<p>供应商Supplier</p>
+								</div>
+								<div class="col-4 in_inside_borders">
+									<p>数量Quantity</p>
+								</div>
+								<div class="col-3 ">
+									<p>状态Status</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_0">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">09:00-10:00</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_1">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">10:00-11:00</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_2">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">11:00-11:30</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_3">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">13:00-14:00</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_4">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">14:00-15:00</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_5">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">15:00-16:00</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_6">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">16:00-16:30</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_7">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">11:30-13:00（异常窗口）</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row exp_border exp_border_8" style="border-bottom: 1px solid rgb(0, 0, 0);">
+				<div class="col-1 borders col_time tab-p ">
+					<p class="text-center  h_line">17:30-18:00（异常窗口）</p>
+				</div>
+				<div class="col-md-auto borders berth addBorder exp-berth">
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+					<div class="col-12 data_borders"></div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col borders" style="border-bottom: none;">
+					<div class="row  message">
+						<div class="col-5  t_ver_borders addBorder supplier">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-4 t_ver_borders addBorder quantity">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+						<div class="col-3  addBorder status">
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+							<div class="col-12 data_borders"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/myjs/main.min.js" ></script>
+	</body>
+</html>
