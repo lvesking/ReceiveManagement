@@ -1,3 +1,3 @@
 "# Kanban-management-system" 
-"# management" 
-"# receiveManagement" 
+##看板系统管理   
+采用java和前端技术
